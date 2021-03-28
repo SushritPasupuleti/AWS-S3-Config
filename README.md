@@ -16,3 +16,30 @@ Example:
 | AWSSecretKey | Value |
 
 These keys are necessary for access to all AWS Resources from aws-sdk
+
+## Ensure Bucket Settings
+
+Ensure that Block Public Access options are all disabled
+
+## Bucket Policy
+
+```json
+{
+    "Version": "2008-10-17",
+    "Id": "Policy-id",
+    "Statement": [
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket-name/*",
+            "Condition": {}
+        }
+    ]
+}
+```
+
+Replace `bucket-name` in `Statement.Resource` with your bucket name.
