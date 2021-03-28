@@ -43,3 +43,25 @@ Ensure that Block Public Access options are all disabled
 ```
 
 Replace `bucket-name` in `Statement.Resource` with your bucket name.
+
+## CORS
+
+```json
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "HEAD",
+            "POST",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+```
